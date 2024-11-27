@@ -1,0 +1,34 @@
+C:\Users\mahmo\Work\Projects\Visual Basic\MetroApp\MetroApp\bin\Release\net8.0-windows\MetroApp.exe
+C:\Users\mahmo\Work\Projects\Visual Basic\MetroApp\MetroApp\bin\Release\net8.0-windows\MetroApp.deps.json
+C:\Users\mahmo\Work\Projects\Visual Basic\MetroApp\MetroApp\bin\Release\net8.0-windows\MetroApp.runtimeconfig.json
+C:\Users\mahmo\Work\Projects\Visual Basic\MetroApp\MetroApp\bin\Release\net8.0-windows\MetroApp.dll
+C:\Users\mahmo\Work\Projects\Visual Basic\MetroApp\MetroApp\bin\Release\net8.0-windows\MetroApp.pdb
+C:\Users\mahmo\Work\Projects\Visual Basic\MetroApp\MetroApp\obj\Release\net8.0-windows\MetroApp.form1.resources
+C:\Users\mahmo\Work\Projects\Visual Basic\MetroApp\MetroApp\obj\Release\net8.0-windows\MetroApp.vbproj.GenerateResource.cache
+C:\Users\mahmo\Work\Projects\Visual Basic\MetroApp\MetroApp\obj\Release\net8.0-windows\MetroApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mahmo\Work\Projects\Visual Basic\MetroApp\MetroApp\obj\Release\net8.0-windows\MetroApp.AssemblyInfoInputs.cache
+C:\Users\mahmo\Work\Projects\Visual Basic\MetroApp\MetroApp\obj\Release\net8.0-windows\MetroApp.AssemblyInfo.vb
+C:\Users\mahmo\Work\Projects\Visual Basic\MetroApp\MetroApp\obj\Release\net8.0-windows\MetroApp.vbproj.CoreCompileInputs.cache
+C:\Users\mahmo\Work\Projects\Visual Basic\MetroApp\MetroApp\obj\Release\net8.0-windows\MetroApp.dll
+C:\Users\mahmo\Work\Projects\Visual Basic\MetroApp\MetroApp\obj\Release\net8.0-windows\refint\MetroApp.dll
+C:\Users\mahmo\Work\Projects\Visual Basic\MetroApp\MetroApp\obj\Release\net8.0-windows\MetroApp.pdb
+C:\Users\mahmo\Work\Projects\Visual Basic\MetroApp\MetroApp\obj\Release\net8.0-windows\MetroApp.genruntimeconfig.cache
+C:\Users\mahmo\Work\Projects\Visual Basic\MetroApp\MetroApp\obj\Release\net8.0-windows\ref\MetroApp.dll
+C:\Users\mahmo\Work\Projects\Visual Basic\MetroApp\MetroApp\obj\Release\net8.0-windows\MetroApp.sourcelink.json
+C:\Users\Tarsh\Source\Repos\MetroCO2\MetroApp\bin\Release\net8.0-windows\MetroApp.exe
+C:\Users\Tarsh\Source\Repos\MetroCO2\MetroApp\bin\Release\net8.0-windows\MetroApp.deps.json
+C:\Users\Tarsh\Source\Repos\MetroCO2\MetroApp\bin\Release\net8.0-windows\MetroApp.runtimeconfig.json
+C:\Users\Tarsh\Source\Repos\MetroCO2\MetroApp\bin\Release\net8.0-windows\MetroApp.dll
+C:\Users\Tarsh\Source\Repos\MetroCO2\MetroApp\bin\Release\net8.0-windows\MetroApp.pdb
+C:\Users\Tarsh\Source\Repos\MetroCO2\MetroApp\obj\Release\net8.0-windows\MetroApp.form1.resources
+C:\Users\Tarsh\Source\Repos\MetroCO2\MetroApp\obj\Release\net8.0-windows\MetroApp.vbproj.GenerateResource.cache
+C:\Users\Tarsh\Source\Repos\MetroCO2\MetroApp\obj\Release\net8.0-windows\MetroApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tarsh\Source\Repos\MetroCO2\MetroApp\obj\Release\net8.0-windows\MetroApp.AssemblyInfoInputs.cache
+C:\Users\Tarsh\Source\Repos\MetroCO2\MetroApp\obj\Release\net8.0-windows\MetroApp.AssemblyInfo.vb
+C:\Users\Tarsh\Source\Repos\MetroCO2\MetroApp\obj\Release\net8.0-windows\MetroApp.vbproj.CoreCompileInputs.cache
+C:\Users\Tarsh\Source\Repos\MetroCO2\MetroApp\obj\Release\net8.0-windows\MetroApp.sourcelink.json
+C:\Users\Tarsh\Source\Repos\MetroCO2\MetroApp\obj\Release\net8.0-windows\MetroApp.dll
+C:\Users\Tarsh\Source\Repos\MetroCO2\MetroApp\obj\Release\net8.0-windows\refint\MetroApp.dll
+C:\Users\Tarsh\Source\Repos\MetroCO2\MetroApp\obj\Release\net8.0-windows\MetroApp.pdb
+C:\Users\Tarsh\Source\Repos\MetroCO2\MetroApp\obj\Release\net8.0-windows\MetroApp.genruntimeconfig.cache
+C:\Users\Tarsh\Source\Repos\MetroCO2\MetroApp\obj\Release\net8.0-windows\ref\MetroApp.dll
