@@ -1,4 +1,5 @@
 ﻿Imports System.Collections.Specialized.BitVector32
+Imports System.Reflection.Emit
 
 Public Class form1
     Private metroLines As New Dictionary(Of String, List(Of String))()
@@ -7,27 +8,33 @@ Public Class form1
     Private Sub Form_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Define metro lines
         metroLines("Line 1") = New List(Of String) From {
-            "Helwan", "Ain Helwan", "Helwan University", "Wadi Hof", "Hadayek Helwan", "El-Maasara", "Tora El-Asmant",
-            "Kozzika", "Tora El-Balad", "Sakanat El-Maadi", "Maadi", "Hadayek El-Maadi", "Dar El-Salam", "El-Zahraa",
-            "Mar Girgis", "El-Malek El-Saleh", "Al-Sayeda Zeinab", "Saad Zaghloul", "Sadat", "Nasser", "Orabi",
-            "Al-Shohadaa", "Ghamra", "El-Demerdash", "Manshiet El-Sadr", "Kobri El-Qobba", "Hammamat El-Qobba",
-            "Saray El-Qobba", "Hadayeq El-Zaitoun", "Helmeyet El-Zaitoun", "El-Matareyya", "Ain Shams", "Ezbet El-Nakhl", "El-Marg", "New El-Marg"
+            "Helwan", "Ain Helwan", "Helwan University", "Wadi Hof", "Hadayek Helwan", "El-Masraa",
+            "Tora El-Asmant", "Kozzika", "Tora El-Balad", "Sakanat El-Maadi", "Maadi", "Hadayek El-Maadi",
+            "Dar El-Salam", "El-Zahraa", "Mar Girgis", "El-Malek El-Saleh", "Al-Sayeda Zeinab",
+            "Saad Zaghloul", "Sadat", "Nasser", "Orabi", "Al-Shohadaa", "Ghamra", "El-Demerdash",
+            "Manshiet El-Sadr", "Kobri El-Qobba", "Hammamat El-Qobba", "Saray El-Qobba",
+            "Hadayeq El-Zaitoun", "Helmeyet El-Zaitoun", "El-Matareyya", "Ain Shams",
+            "Ezbet El-Nakhl", "El-Marg", "New El-Marg"
         }
 
         metroLines("Line 2") = New List(Of String) From {
             "Shubra El-Kheima", "Kolleyet El-Zeraa", "Mezallat", "Khalafawy", "Saint Teresa", "Rod El-Farag",
-            "Masarra", "Al-Shohadaa", "Attaba", "Sadat", "Dokki", "El-Behoos", "Cairo University", "Faisal", "Giza",
-            "Omm El-Masryeen", "Sakiat Mekki", "El-Monib"
+            "Masarra", "Al-Shohadaa", "Attaba", "Mohamed Naguib", "Sadat", "Opera", "Dokki", "El-Behoos", "Cairo University", "Faisal",
+            "Giza", "Omm El-Masryeen", "Sakiat Mekki", "El-Monib"
         }
 
         metroLines("Line 3") = New List(Of String) From {
-            "Adly Mansour", "El-Haykestep", "Omar Ibn El-Khattab", "Qobaa", "Hesham Barakat", "El-Nozha", "Nadi El-Shams",
-            "Alf Maskan", "Heliopolis Square", "Haroun", "Al-Ahram", "Koleyet El-Banat", "Cairo Stadium", "Fair Zone",
-            "Abbassia", "Abdou Pasha", "El-Geish", "Bab El-Shaaria", "Attaba", "Nasser", "Maspero", "Safaa Hegazy", "Kit Kat"
+            "Adly Mansour", "El-Haykestep", "Omar Ibn El-Khattab", "Qobaa", "Hesham Barakat", "El-Nozha",
+            "Nadi El-Shams", "Alf Maskan", "Heliopolis Square", "Haroun", "Al-Ahram", "Koleyet El-Banat",
+            "Cairo Stadium", "Fair Zone", "Abbassia", "Abdou Pasha", "El-Geish", "Bab El-Shaaria",
+            "Attaba", "Nasser", "Maspero", "Safaa Hegazy", "Kit Kat"
         }
+        metroLines("Line 4") = New List(Of String) From {
+            "Rod El-Farag", "Ring Road", "El-Qawmia", "El-Bohy", "Imbaba", "Sudan", "Kit Kat", "Tawfikia", "Wadi El-Nile",
+            "Gamet El-Dowel" , "Boulak El-Dakrour", "Cairo University"}
 
         ' Define interchange stations
-        interchangeStations = New List(Of String) From {"Al-Shohadaa", "Sadat", "Attaba", "Nasser"}
+        interchangeStations = New List(Of String) From {"Al-Shohadaa", "Sadat", "Attaba", "Nasser", "Kit Kat", "Cairo University"}
 
         ' Add stations to dropdown lists
         For Each lineStations In metroLines.Values
@@ -46,13 +53,43 @@ Public Class form1
 
         Dim startStation As String = cbStart.SelectedItem.ToString()
         Dim endStation As String = cbEnd.SelectedItem.ToString()
-        Dim stationCount As Integer = CalculateShortestPath(startStation, endStation)
-        lblResult.Text = If(stationCount <> -1, $"Shortest path: {stationCount} stations.", "No path found between the selected stations.")
-        Dim interchanges As String = GetInterchangeStations(startStation, endStation)
-        Dim totalTime As Double = CalculateJourneyTime(startStation, endStation)
-        Label6.Text = interchanges
-        Label5.Text = totalTime
+        Dim result = CalculateShortestPathWithPath(startStation, endStation)
 
+        Dim stationCount As Integer = result.Item1
+        Dim path As List(Of String) = result.Item2
+        Dim totalMinutes As Double = stationCount * 3
+        Dim time As String = ConvertMinutesToTime(totalMinutes)
+
+        If stationCount <> -1 Then
+            lblResult.Text = $"Shortest path: {stationCount} stations."
+
+            ' Highlight interchange stations
+            Dim formattedPath As New List(Of String)
+            For Each station In path
+                If interchangeStations.Contains(station) Then
+                    formattedPath.Add($"({station})") ' Use a special format or symbol
+                Else
+                    formattedPath.Add(station)
+                End If
+            Next
+
+            pathlbl.Text = $"Path: {String.Join(" → ", formattedPath)}"
+        Else
+            lblResult.Text = "No path found between the selected stations."
+            pathlbl.Text = ""
+        End If
+
+        timelbl.Text = $"Total Time: {time}"
+
+        If stationCount <= 9 Then
+            tecketlbl.Text = "Ticket Price: 8"
+        ElseIf stationCount <= 16 Then
+            tecketlbl.Text = "Ticket Price: 10"
+        ElseIf stationCount <= 23 Then
+            tecketlbl.Text = "Ticket Price: 15"
+        Else
+            tecketlbl.Text = "Ticket Price: 20"
+        End If
     End Sub
 
     Private Function CalculateShortestPath(startStation As String, endStation As String) As Integer
@@ -83,6 +120,35 @@ Public Class form1
 
         Return -1 ' No path found
     End Function
+    Private Function CalculateShortestPathWithPath(startStation As String, endStation As String) As Tuple(Of Integer, List(Of String))
+        Dim queue As New Queue(Of Tuple(Of String, Integer, List(Of String)))()
+        Dim visitedStations As New HashSet(Of String)()
+
+        queue.Enqueue(Tuple.Create(startStation, 0, New List(Of String) From {startStation}))
+        visitedStations.Add(startStation)
+
+        While queue.Count > 0
+            Dim current = queue.Dequeue()
+            Dim currentStation = current.Item1
+            Dim currentCount = current.Item2
+            Dim path = current.Item3
+
+            If currentStation = endStation Then
+                Return Tuple.Create(currentCount, path)
+            End If
+
+            Dim neighbors = GetNeighbors(currentStation)
+            For Each neighbor In neighbors
+                If Not visitedStations.Contains(neighbor) Then
+                    visitedStations.Add(neighbor)
+                    Dim newPath = New List(Of String)(path) From {neighbor}
+                    queue.Enqueue(Tuple.Create(neighbor, currentCount + 1, newPath))
+                End If
+            Next
+        End While
+
+        Return Tuple.Create(-1, New List(Of String)()) ' No path found
+    End Function
 
     Private Function GetNeighbors(station As String) As List(Of String)
         Dim neighbors As New List(Of String)()
@@ -111,11 +177,11 @@ Public Class form1
 
     End Function
     Private Function GetInterchangeStations(startStation As String, endStation As String) As String
-        ' BFS to find the shortest path and track interchange stations
+
         Dim queue As New Queue(Of Tuple(Of String, List(Of String)))()
         Dim visitedStations As New HashSet(Of String)()
 
-        ' Enqueue the start station with an empty list of visited interchange stations
+
         queue.Enqueue(Tuple.Create(startStation, New List(Of String)()))
         visitedStations.Add(startStation)
 
@@ -123,21 +189,14 @@ Public Class form1
             Dim current = queue.Dequeue()
             Dim currentStation = current.Item1
             Dim interchangePath = current.Item2
-
-            ' If the current station is the end station, return the interchange stations as a string
             If currentStation = endStation Then
                 Return If(interchangePath.Any(), String.Join(", ", interchangePath), "No interchanges needed.")
             End If
-
             Dim neighbors = GetNeighbors(currentStation)
             For Each neighbor In neighbors
                 If Not visitedStations.Contains(neighbor) Then
                     visitedStations.Add(neighbor)
-
-                    ' Clone the current interchange path
                     Dim newInterchangePath = New List(Of String)(interchangePath)
-
-                    ' Add the station to the path if it's an interchange station
                     If interchangeStations.Contains(currentStation) AndAlso Not newInterchangePath.Contains(currentStation) Then
                         newInterchangePath.Add(currentStation)
                     End If
@@ -150,24 +209,24 @@ Public Class form1
         Return "No path found between the selected stations."
     End Function
     Private Function CalculateJourneyTime(startStation As String, endStation As String) As String
-        ' Average time between two stations (in minutes)
+
         Const averageTimePerStation As Double = 3
-
-        ' Calculate the shortest path in terms of station count
         Dim stationCount As Integer = CalculateShortestPath(startStation, endStation)
-
-        ' If no path is found, return an appropriate message
         If stationCount = -1 Then
             Return "No path found between the selected stations."
         End If
-
-        ' Calculate the total time for the journey
         Dim totalTime As Double = stationCount * averageTimePerStation
-
         Return totalTime
     End Function
+    Public Function ConvertMinutesToTime(minutes As Integer) As String
+        Dim hours As Integer = minutes \ 60
+        Dim remainingMinutes As Integer = minutes Mod 60
+        Dim seconds As Integer = 0 ' إذا كنت تريد تضمين الثواني، يمكنك تعديل القيمة
 
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
+        Return $"{hours:D2}:{remainingMinutes:D2}:{seconds:D2}"
+    End Function
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Map.Show()
     End Sub
 End Class

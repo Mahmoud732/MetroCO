@@ -1,0 +1,65 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mahmo\\Work\\Projects\\Visual Basic\\MetroApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{68665E81-A8BA-4998-9F5E-2FDCDCF86BB4}|MetroApp\\MetroApp.vbproj|c:\\users\\mahmo\\work\\projects\\visual basic\\metroapp\\metroapp\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{68665E81-A8BA-4998-9F5E-2FDCDCF86BB4}|MetroApp\\MetroApp.vbproj|solutionrelative:metroapp\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68665E81-A8BA-4998-9F5E-2FDCDCF86BB4}|MetroApp\\MetroApp.vbproj|c:\\users\\mahmo\\work\\projects\\visual basic\\metroapp\\metroapp\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{68665E81-A8BA-4998-9F5E-2FDCDCF86BB4}|MetroApp\\MetroApp.vbproj|solutionrelative:metroapp\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.vb",
+              "DocumentMoniker": "C:\\Users\\mahmo\\Work\\Projects\\Visual Basic\\MetroApp\\MetroApp\\Form1.vb",
+              "RelativeDocumentMoniker": "MetroApp\\Form1.vb",
+              "ToolTip": "C:\\Users\\mahmo\\Work\\Projects\\Visual Basic\\MetroApp\\MetroApp\\Form1.vb",
+              "RelativeToolTip": "MetroApp\\Form1.vb",
+              "ViewState": "AgIAADUAAAAAAAAAAAAAAEUAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-11-28T09:49:39.061Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\mahmo\\Work\\Projects\\Visual Basic\\MetroApp\\MetroApp\\Form1.vb",
+              "RelativeDocumentMoniker": "MetroApp\\Form1.vb",
+              "ToolTip": "C:\\Users\\mahmo\\Work\\Projects\\Visual Basic\\MetroApp\\MetroApp\\Form1.vb [Design]",
+              "RelativeToolTip": "MetroApp\\Form1.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-11-28T09:48:56.533Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

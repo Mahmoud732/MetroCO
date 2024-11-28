@@ -32,3 +32,5 @@ C:\Users\Tarsh\Source\Repos\MetroCO2\MetroApp\obj\Release\net8.0-windows\refint\
 C:\Users\Tarsh\Source\Repos\MetroCO2\MetroApp\obj\Release\net8.0-windows\MetroApp.pdb
 C:\Users\Tarsh\Source\Repos\MetroCO2\MetroApp\obj\Release\net8.0-windows\MetroApp.genruntimeconfig.cache
 C:\Users\Tarsh\Source\Repos\MetroCO2\MetroApp\obj\Release\net8.0-windows\ref\MetroApp.dll
+C:\Users\mahmo\Work\Projects\Visual Basic\MetroApp\MetroApp\obj\Release\net8.0-windows\MetroApp.Map.resources
+C:\Users\mahmo\Work\Projects\Visual Basic\MetroApp\MetroApp\obj\Release\net8.0-windows\MetroApp.Resources.resources

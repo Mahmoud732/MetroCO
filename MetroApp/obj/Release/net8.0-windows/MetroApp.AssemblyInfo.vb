@@ -16,7 +16,7 @@ Imports System.Reflection
 <Assembly: System.Reflection.AssemblyCompanyAttribute("MetroApp"),  _
  Assembly: System.Reflection.AssemblyConfigurationAttribute("Release"),  _
  Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0"),  _
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c66811b3d911d5f51b6d729102d917ab2cf573f3"),  _
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fec8262bdc764caee10c650b7a991d2b888b4519"),  _
  Assembly: System.Reflection.AssemblyProductAttribute("MetroApp"),  _
  Assembly: System.Reflection.AssemblyTitleAttribute("MetroApp"),  _
  Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0"),  _
